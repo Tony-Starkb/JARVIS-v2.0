@@ -13,6 +13,7 @@ import time
 import os
 import subprocess
 import shutil
+import webbrowser
 
 # Prefer package-relative import when used as a package; fall back when run directly.
 try:
@@ -29,6 +30,14 @@ class UIAppController:
         self.process = None
 
     def open_App(self):
+        normalized_name = self.app_name.lower()
+
+        # YouTube is a web app, not a native Windows executable.
+        if normalized_name in {"youtube", "www.youtube.com", "https://www.youtube.com", "youtube.com"}:
+            webbrowser.open("https://www.youtube.com")
+            print("Opened YouTube in the default browser.")
+            return
+
         # Check by process name without extension for a more reliable test
         '''
         if is_app_running(self.app_name_no_ext):

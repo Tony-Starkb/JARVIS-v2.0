@@ -12,6 +12,9 @@ class IntentParser:
         if "open" in text and "chrome" in text:
             return {"intent": "open_app", "app": "chrome"}
         
+        if "open" in text and "youtube" in text:
+            return {"intent": "open_app", "app": "youtube"}
+        
         if "open" in text and "notepad" in text:
             return {"intent": "open_app", "app": "notepad"}
         
