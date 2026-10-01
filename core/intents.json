@@ -1,0 +1,47 @@
+{
+  "open_app": [
+    "open chrome",
+    "launch chrome",
+    "start chrome",
+    "open browser",
+    "open the application"
+  ],
+  "close_app": [
+    "close chrome",
+    "close the app",
+    "terminate application"
+  ],
+  "get_time": [
+    "what time is it",
+    "tell me the time",
+    "current time"
+  ],
+  "shutdown": [
+    "shutdown",
+    "exit jarvis",
+    "quit"
+  ],
+  "sleep": [
+    "go to sleep",
+    "sleep mode",
+    "hibernate"
+  ],
+  "notepad_new_file": [
+    "open notepad",
+    "create new notepad",
+    "new note"
+  ],
+  "notepad_save": [
+    "save notepad",
+    "save the document",
+    "save file"
+  ],
+  "notepad_open": [
+    "open a file",
+    "open notepad file"
+  ],
+  "notepad_print": [
+    "print document",
+    "print this"
+  ]
+}
