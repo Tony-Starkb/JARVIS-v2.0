@@ -28,6 +28,21 @@ class UIAppController:
         self.app_basename = os.path.basename(self.app_name)
         self.app_name_no_ext = os.path.splitext(self.app_basename)[0]
         self.process = None
+        
+        # Normalize the directions for scrolling
+        self.scroll_directions = {"up", "down"}
+        
+    
+    
+    def scroll(self, direction, amount=50):
+        if direction not in self.scroll_directions:
+            return "Unsupported scroll direction"
+        
+        scroll_amount = amount if direction == "up" else -amount
+        pyautogui.scroll(scroll_amount, x=100, y=100)  # Scroll at a fixed position (100, 100)
+        return f"Scrolled {direction}"
+
+
 
     def open_App(self):
         normalized_name = self.app_name.lower()

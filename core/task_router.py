@@ -43,6 +43,9 @@ class TaskRouter:
         if intent == "app_action":
             return self.handle_app_action(intent_data)
         
+        if intent == "scroll":
+            return self.scroll(intent_data["direction"])
+        
         return "I didn't understand that."
     
     def handle_app_action(self, intent_data):
@@ -67,3 +70,7 @@ class TaskRouter:
 
     def get_time(self):
         return datetime.datetime.now().strftime("Current time: %H:%M:%S")
+    
+    def scroll(self, direction):
+        app_controller = UIAppController("dummy")  # Dummy name since we just need the scroll method
+        return app_controller.scroll(direction)

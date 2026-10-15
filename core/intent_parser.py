@@ -74,6 +74,12 @@ class IntentParser:
         
         if "sleep" in text:
             return {"intent": "sleep"}
+        
+        if "scroll" in text and "up" in text:
+            return {"intent": "scroll", "direction": "up"}
+        
+        if "scroll" in text and "down" in text:
+            return {"intent": "scroll", "direction": "down"}
 
 # In App actions
 
